@@ -25,7 +25,6 @@ def solution(n, s, a, b, fares):
     
     ans = dijkstra(adj, n, s, a) + dijkstra(adj, n, s, b)
     for i in range(1, n+1):
-        # print(ans)
         if s != i:
             ans = min(ans, dijkstra(adj, n, s, i) + dijkstra(adj, n, i, a) + dijkstra(adj, n, i, b))
     return ans
